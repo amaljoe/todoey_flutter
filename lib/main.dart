@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/models/tasks_list_model.dart';
 import 'package:todoey_flutter/screens/tasks_screen.dart';
-import 'file:///C:/Users/amalj/AndroidStudioProjects/flutter_apps/todoey_flutter/lib/screens/add_task_screen.dart';
-
-import 'components/tasks_list.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,8 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: TasksScreen(),
+    return ChangeNotifierProvider<TasksListModel>(
+      create: (context) => TasksListModel(),
+      child: MaterialApp(
+        home: TasksScreen(),
+      ),
     );
   }
 }
