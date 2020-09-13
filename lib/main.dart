@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/tasks_list.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -16,6 +18,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.lightBlueAccent,
         floatingActionButton: FloatingActionButton(
+          onPressed: () {},
           child: Icon(Icons.add),
           backgroundColor: Colors.lightBlueAccent,
         ),
@@ -23,7 +26,7 @@ class _MyAppState extends State<MyApp> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 80, left: 20),
+              padding: EdgeInsets.only(top: 70, left: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -62,6 +65,7 @@ class _MyAppState extends State<MyApp> {
             ),
             Expanded(
               child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -69,6 +73,7 @@ class _MyAppState extends State<MyApp> {
                     topRight: Radius.circular(30),
                   ),
                 ),
+                child: TasksList(),
               ),
             )
           ],
