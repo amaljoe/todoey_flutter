@@ -4,10 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:todoey_flutter/models/task.dart';
 
 class TasksListModel extends ChangeNotifier {
-  List<Task> _tasks = [
-    Task(taskName: 'Buy milk'),
-    Task(taskName: 'Buy cow'),
-  ];
+  List<Task> _tasks = [];
 
   int get tasksCount => _tasks.length;
 
